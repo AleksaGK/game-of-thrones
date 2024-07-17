@@ -1,0 +1,39 @@
+.container {
+    width: 80%;
+    margin: 20px auto;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .content {
+    form {
+      display: flex;
+      flex-direction: column;
+
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 16px;
+
+        input.mat-input {
+          width: 100%;
+        }
+
+        mat-select {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+
+    button.mat-button {
+      margin-left: 8px;
+    }
+  }
+}

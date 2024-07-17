@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 mat-dialog-title>Dodaj novog lika</h2>
+  <div mat-dialog-content class="content">
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="firstName"
+          placeholder="Ime"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="lastName"
+          placeholder="Prezime"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="title" placeholder="Titula" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Kuća</mat-label>
+        <mat-select formControlName="family" required>
+          @for(house of data.houses; track house){
+          <mat-option [value]="house">
+            {{ house }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="imageUrl" placeholder="URL slike" />
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="actions" mat-dialog-actions>
+    <button mat-button (click)="save()">Sačuvaj</button>
+    <button mat-button (click)="cancel()">Otkaži</button>
+  </div>
+</div>
